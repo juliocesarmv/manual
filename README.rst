@@ -9,7 +9,9 @@
 
 .. image:: images/prueba.bmp
 
-.. image:: images/prueba.bmp
+fgfg 
+
+.. image:: images/prueba.png
 
 Section Structure
 =================
