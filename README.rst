@@ -7,11 +7,11 @@
 :Revision: $Revision: 7463 $
 :Description: This is a "docinfo block", or bibliographic field list
 
-.. image:: images/prueba.bmp
+.. image1:: images/prueba.bmp
 
 fgfg 
 
-image:: images/prueba.png
+.. image2:: images/prueba.png
 
 Section Structure
 =================
