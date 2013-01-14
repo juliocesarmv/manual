@@ -9,6 +9,8 @@
 
 .. image:: images/prueba.bmp
 
+.. image:: images/prueba.bmp
+
 Section Structure
 =================
 Section titles are underlined or overlined & underlined.
