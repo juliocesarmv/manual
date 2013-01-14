@@ -1,24 +1,129 @@
-First file
+=====================================================
+ The reStructuredText_ Cheat Sheet: Syntax Reminders
+=====================================================
+:Info: See <http://docutils.sf.net/rst.html> for introductory docs.
+:Author: David Goodger <goodger@python.org>
+:Date: $Date: 2012-06-22 19:49:51 +0000 (Fri, 22 Jun 2012) $
+:Revision: $Revision: 7463 $
+:Description: This is a "docinfo block", or bibliographic field list
+
+Section Structure
+=================
+Section titles are underlined or overlined & underlined.
+
+Body Elements
 =============
-dsdsadjsahdjs jahjdasjdsad
+Grid table:
 
++--------------------------------+-----------------------------------+
+| Paragraphs are flush-left,     | Literal block, preceded by "::":: |
+| separated by blank lines.      |                                   |
+|                                |     Indented                      |
+|     Block quotes are indented. |                                   |
++--------------------------------+ or::                              |
+| >>> print 'Doctest block'      |                                   |
+| Doctest block                  | > Quoted                          |
++--------------------------------+-----------------------------------+
+| | Line blocks preserve line breaks & indents. [new in 0.3.6]       |
+| |     Useful for addresses, verse, and adornment-free lists; long  |
+|       lines can be wrapped with continuation lines.                |
++--------------------------------------------------------------------+
 
-Un texto es una composición de signos codificado en un sistema de escritura (como un alfabeto) que forma una unidad de sentido . Su tamaño puede ser variable.
+Simple tables:
 
-También es texto una composición de caracteres imprimibles (con grafema) generados por un algoritmo de cifrado que, aunque no tienen sentido para cualquier persona, sí puede ser descifrado por su destinatario original.
-Detalle de texto en inglés.
+================  ============================================================
+List Type         Examples
+================  ============================================================
+Bullet list       * items begin with "-", "+", or "*"
+Enumerated list   1. items use any variation of "1.", "A)", and "(i)"
+                  #. also auto-enumerated
+Definition list   Term is flush-left : optional classifier
+                      Definition is indented, no blank line between
+Field list        :field name: field body
+Option list       -o  at least 2 spaces between option & description
+================  ============================================================
 
-En otras palabras, un texto es un entramado de signos con una intención comunicativa que adquiere sentido en determinado contexto.
+================  ============================================================
+Explicit Markup   Examples (visible in the `text source <cheatsheet.txt>`_)
+================  ============================================================
+Footnote          .. [1] Manually numbered or [#] auto-numbered
+                     (even [#labelled]) or [*] auto-symbol
+Citation          .. [CIT2002] A citation.
+Hyperlink Target  .. _reStructuredText: http://docutils.sf.net/rst.html
+                  .. _indirect target: reStructuredText_
+                  .. _internal target:
+Anonymous Target  __ http://docutils.sf.net/docs/ref/rst/restructuredtext.html
+Directive ("::")  .. image:: images/biohazard.png
+Substitution Def  .. |substitution| replace:: like an inline directive
+Comment           .. is anything else
+Empty Comment     (".." on a line by itself, with blank lines before & after,
+                  used to separate indentation contexts)
+================  ============================================================
 
-Las ideas esenciales que comunica un texto están contenidas en lo que se suele denominar «macroproposiciones», unidades estructurales de nivel superior o global, que otorgan coherencia al texto constituyendo su hilo central, el esqueleto estructural que cohesiona elementos lingüísticos formales de alto nivel, como los títulos y subtítulos, la secuencia de párrafos, etc. En contraste, las «microproposiciones» son los elementos coadyudantes de la cohesión de un texto, pero a nivel más particular o local. Esta distinción fue realizada por Teun van Dijk en 1980.1
+Inline Markup
+=============
+*emphasis*; **strong emphasis**; `interpreted text`; `interpreted text
+with role`:emphasis:; ``inline literal text``; standalone hyperlink,
+http://docutils.sourceforge.net; named reference, reStructuredText_;
+`anonymous reference`__; footnote reference, [1]_; citation reference,
+[CIT2002]_; |substitution|; _`inline internal target`.
+
+Directive Quick Reference
+=========================
+See <http://docutils.sf.net/docs/ref/rst/directives.html> for full info.
 
-El nivel microestructural o local está asociado con el concepto de cohesión. Se refiere a uno de los fenómenos propios de la coherencia, el de las relaciones particulares y locales que se dan entre elementos lingüísticos, tanto los que remiten unos a otros como los que tienen la función de conectar y organizar.
+================  ============================================================
+Directive Name    Description (Docutils version added to, in [brackets])
+================  ============================================================
+attention         Specific admonition; also "caution", "danger",
+                  "error", "hint", "important", "note", "tip", "warning"
+admonition        Generic titled admonition: ``.. admonition:: By The Way``
+image             ``.. image:: picture.png``; many options possible
+figure            Like "image", but with optional caption and legend
+topic             ``.. topic:: Title``; like a mini section
+sidebar           ``.. sidebar:: Title``; like a mini parallel document
+parsed-literal    A literal block with parsed inline markup
+rubric            ``.. rubric:: Informal Heading``
+epigraph          Block quote with class="epigraph"
+highlights        Block quote with class="highlights"
+pull-quote        Block quote with class="pull-quote"
+compound          Compound paragraphs [0.3.6]
+container         Generic block-level container element [0.3.10]
+table             Create a titled table [0.3.1]
+list-table        Create a table from a uniform two-level bullet list [0.3.8]
+csv-table         Create a table from CSV data [0.3.4]
+contents          Generate a table of contents
+sectnum           Automatically number sections, subsections, etc.
+header, footer    Create document decorations [0.3.8]
+target-notes      Create an explicit footnote for each external target
+math              Mathematical notation (input in LaTeX format)
+meta              HTML-specific metadata
+include           Read an external reST file as if it were inline
+raw               Non-reST data passed untouched to the Writer
+replace           Replacement text for substitution definitions
+unicode           Unicode character code conversion for substitution defs
+date              Generates today's date; for substitution defs
+class             Set a "class" attribute on the next element
+role              Create a custom interpreted text role [0.3.2]
+default-role      Set the default interpreted text role [0.3.10]
+title             Set the metadata document title [0.3.10]
+================  ============================================================
 
-También es un conjunto de oraciones agrupadas en párrafos que habla de un tema determinado.
+Interpreted Text Role Quick Reference
+=====================================
+See <http://docutils.sf.net/docs/ref/rst/roles.html> for full info.
 
-¿Cómo extraer de un texto una idea esencial? Hay varios pasos:
-
-    Leer atentamente el párrafo.
-    Identificar "núcleos" (lo importante del párrafo) y escribirlos en forma de oración simple.
-    Identificar la información adicional .
-    Relacionar esos núcleos a través de una oración compleja unida por uno o varios conectivos.
+================  ============================================================
+Role Name         Description
+================  ============================================================
+emphasis          Equivalent to *emphasis*
+literal           Equivalent to ``literal`` but processes backslash escapes
+math              Mathematical notation (input in LaTeX format)
+PEP               Reference to a numbered Python Enhancement Proposal
+RFC               Reference to a numbered Internet Request For Comments
+raw               For non-reST data; cannot be used directly (see docs) [0.3.6]
+strong            Equivalent to **strong**
+sub               Subscript
+sup               Superscript
+title             Title reference (book, etc.); standard default role
+================  ============================================================
