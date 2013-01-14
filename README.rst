@@ -7,7 +7,7 @@
 :Revision: $Revision: 7463 $
 :Description: This is a "docinfo block", or bibliographic field list
 
-|prueba.bmp|
+.. image:: images/prueba.bmp
 
 Section Structure
 =================
