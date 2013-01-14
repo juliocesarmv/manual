@@ -11,7 +11,7 @@
 
 fgfg 
 
-.. image:: images/prueba.png
+image:: images/prueba.png
 
 Section Structure
 =================
